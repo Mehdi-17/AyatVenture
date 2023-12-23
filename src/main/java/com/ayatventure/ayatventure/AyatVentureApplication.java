@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AyartVentureApplication {
+public class AyatVentureApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AyartVentureApplication.class, args);
+		SpringApplication.run(AyatVentureApplication.class, args);
 	}
 
 }
