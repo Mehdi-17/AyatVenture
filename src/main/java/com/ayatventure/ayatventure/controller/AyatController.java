@@ -14,8 +14,6 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("ayat")
 public class AyatController {
 
-    private final String GET_RANDOM_AYAT = "https://api.quran.com/api/v4/verses/random?fields=text_uthmani&translations=31,779,136";
-
     public AyatController() {
     }
 
@@ -24,6 +22,7 @@ public class AyatController {
         RestTemplate restTemplate = new RestTemplate();
         ObjectMapper mapper = new ObjectMapper();
 
+        String GET_RANDOM_AYAT = "https://api.quran.com/api/v4/verses/random?fields=text_uthmani&translations=31,779,136";
         ResponseEntity<String> randomAyatResponse = restTemplate.getForEntity(GET_RANDOM_AYAT, String.class);
 
         try {
