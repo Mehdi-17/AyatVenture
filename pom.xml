@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ayatventure</groupId>
-	<artifactId>ayatventure</artifactId>
+	<artifactId>ayatventure-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>AyartVenture</name>
 	<description>AyatVenture: Localise le verset. Le but de ce jeu et de découvrir où se situe dans le Coran, le verset qui s&apos;affiche à l&apos;écran.</description>
