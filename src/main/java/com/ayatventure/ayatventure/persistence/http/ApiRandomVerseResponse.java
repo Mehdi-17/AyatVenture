@@ -1,5 +1,6 @@
-package com.ayatventure.ayatventure.model;
+package com.ayatventure.ayatventure.persistence.http;
 
+import com.ayatventure.ayatventure.model.Ayat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
