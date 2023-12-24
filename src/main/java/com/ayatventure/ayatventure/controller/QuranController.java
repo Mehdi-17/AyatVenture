@@ -17,7 +17,7 @@ public class QuranController {
 
     private QuranService quranService;
 
-    //TODO : make thoses methods to return ResponseEntity rather than object
+    //TODO : make those methods to return ResponseEntity rather than object
 
     @GetMapping("/random")
     public Ayat getRandomAyat() {
