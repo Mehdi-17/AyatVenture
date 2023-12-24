@@ -18,9 +18,7 @@ public class Ayat {
     @JsonProperty("translations")
     private List<Translation> translations;
 
-    @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class Translation {
-        private String text;
+    private record Translation(String text) {
     }
 }
