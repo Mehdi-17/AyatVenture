@@ -12,8 +12,8 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("ayat")
-public class AyatController {
+@RequestMapping("quran")
+public class QuranController {
 
     private QuranService quranService;
 
