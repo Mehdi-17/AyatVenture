@@ -1,6 +1,5 @@
-package com.ayatventure.ayatventure.persistence.http;
+package com.ayatventure.ayatventure.DTO;
 
-import com.ayatventure.ayatventure.model.Ayat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -13,8 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ApiRandomVerseResponse {
+public class ApiRandomVerseResponseDTO {
 
     @JsonProperty("verse")
-    private Ayat ayat;
+    private AyatDTO ayatDTO;
 }

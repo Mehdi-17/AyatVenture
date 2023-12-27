@@ -1,7 +1,7 @@
 package com.ayatventure.ayatventure.controller;
 
-import com.ayatventure.ayatventure.model.Ayat;
-import com.ayatventure.ayatventure.model.Surah;
+import com.ayatventure.ayatventure.DTO.AyatDTO;
+import com.ayatventure.ayatventure.DTO.SurahDTO;
 import com.ayatventure.ayatventure.service.QuranService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,12 +20,12 @@ public class QuranController {
     //TODO : make those methods to return ResponseEntity rather than object
 
     @GetMapping("/random")
-    public Ayat getRandomAyat() {
+    public AyatDTO getRandomAyat() {
         return quranService.getRandomAyat();
     }
 
     @GetMapping("/surahs")
-    public List<Surah> getAllSurahs() {
+    public List<SurahDTO> getAllSurahs() {
         return quranService.getAllSurahs();
     }
 }

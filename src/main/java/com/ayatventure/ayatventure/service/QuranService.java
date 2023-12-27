@@ -1,9 +1,9 @@
 package com.ayatventure.ayatventure.service;
 
-import com.ayatventure.ayatventure.model.Surah;
-import com.ayatventure.ayatventure.persistence.http.ApiAllSurahsResponse;
-import com.ayatventure.ayatventure.persistence.http.ApiRandomVerseResponse;
-import com.ayatventure.ayatventure.model.Ayat;
+import com.ayatventure.ayatventure.DTO.SurahDTO;
+import com.ayatventure.ayatventure.DTO.ApiAllSurahsResponseDTO;
+import com.ayatventure.ayatventure.DTO.ApiRandomVerseResponseDTO;
+import com.ayatventure.ayatventure.DTO.AyatDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class QuranService {
 
-    public Ayat getRandomAyat() {
+    public AyatDTO getRandomAyat() {
         RestTemplate restTemplate = new RestTemplate();
         ObjectMapper mapper = new ObjectMapper();
 
@@ -24,15 +24,15 @@ public class QuranService {
         ResponseEntity<String> randomAyatResponse = restTemplate.getForEntity(GET_RANDOM_AYAT, String.class);
 
         try {
-            ApiRandomVerseResponse apiRandomVerseResponse = mapper.readValue(randomAyatResponse.getBody(), ApiRandomVerseResponse.class);
+            ApiRandomVerseResponseDTO apiRandomVerseResponseDTO = mapper.readValue(randomAyatResponse.getBody(), ApiRandomVerseResponseDTO.class);
 
-            return apiRandomVerseResponse.getAyat();
+            return apiRandomVerseResponseDTO.getAyatDTO();
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public List<Surah> getAllSurahs(){
+    public List<SurahDTO> getAllSurahs(){
         RestTemplate restTemplate = new RestTemplate();
         ObjectMapper mapper = new ObjectMapper();
 
@@ -40,9 +40,9 @@ public class QuranService {
         ResponseEntity<String> allSurahsResponse = restTemplate.getForEntity(GET_ALL_SURAH, String.class);
 
         try {
-            ApiAllSurahsResponse apiAllSurahsResponse = mapper.readValue(allSurahsResponse.getBody(), ApiAllSurahsResponse.class);
+            ApiAllSurahsResponseDTO apiAllSurahsResponseDTO = mapper.readValue(allSurahsResponse.getBody(), ApiAllSurahsResponseDTO.class);
 
-            return apiAllSurahsResponse.getSurahList();
+            return apiAllSurahsResponseDTO.getSurahDTOList();
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }

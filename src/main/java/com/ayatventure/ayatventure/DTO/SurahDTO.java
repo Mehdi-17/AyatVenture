@@ -1,4 +1,4 @@
-package com.ayatventure.ayatventure.model;
+package com.ayatventure.ayatventure.DTO;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Surah {
+public class SurahDTO {
 
     @JsonProperty("revelation_place")
     private String revelationPlace;

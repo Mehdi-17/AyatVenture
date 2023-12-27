@@ -1,6 +1,5 @@
-package com.ayatventure.ayatventure.persistence.http;
+package com.ayatventure.ayatventure.DTO;
 
-import com.ayatventure.ayatventure.model.Surah;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -15,8 +14,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ApiAllSurahsResponse {
+public class ApiAllSurahsResponseDTO {
 
     @JsonProperty("chapters")
-    private List<Surah> surahList;
+    private List<SurahDTO> surahDTOList;
 }
