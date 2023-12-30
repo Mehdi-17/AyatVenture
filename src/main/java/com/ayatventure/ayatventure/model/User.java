@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "user_table")
+@Table(name = "users")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,6 +19,12 @@ public class User {
 
     @Column(name = "user_name")
     private String username;
+
+    @Column(name = "user_password")
+    private String password;
+
+    @Column(name = "user_email")
+    private String email;
 
     @Column(name = "games_played")
     private Long gamesPlayed;
