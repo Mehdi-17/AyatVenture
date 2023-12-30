@@ -1,9 +1,9 @@
-package com.ayatventure.ayatventure.service;
+package com.ayatventure.ayatventure.externalApi.service;
 
-import com.ayatventure.ayatventure.DTO.SurahDTO;
-import com.ayatventure.ayatventure.DTO.ApiAllSurahsResponseDTO;
-import com.ayatventure.ayatventure.DTO.ApiRandomVerseResponseDTO;
-import com.ayatventure.ayatventure.DTO.AyatDTO;
+import com.ayatventure.ayatventure.externalApi.DTO.ApiAllSurahsResponseDTO;
+import com.ayatventure.ayatventure.externalApi.DTO.SurahDTO;
+import com.ayatventure.ayatventure.externalApi.DTO.ApiRandomVerseResponseDTO;
+import com.ayatventure.ayatventure.externalApi.DTO.AyatDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.ResponseEntity;

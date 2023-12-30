@@ -1,8 +1,8 @@
 package com.ayatventure.ayatventure.controller;
 
-import com.ayatventure.ayatventure.DTO.AyatDTO;
-import com.ayatventure.ayatventure.DTO.SurahDTO;
-import com.ayatventure.ayatventure.service.QuranService;
+import com.ayatventure.ayatventure.externalApi.DTO.AyatDTO;
+import com.ayatventure.ayatventure.externalApi.DTO.SurahDTO;
+import com.ayatventure.ayatventure.externalApi.service.QuranService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
