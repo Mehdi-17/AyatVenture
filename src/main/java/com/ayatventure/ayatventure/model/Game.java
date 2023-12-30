@@ -28,4 +28,10 @@ public class Game {
 
     @Column(name = "score")
     private Long score;
+
+    @Column(name = "total_question")
+    private Long totalQuestion;
+
+    @Column(name = "current_question_count")
+    private Long currentQuestionCount;
 }
