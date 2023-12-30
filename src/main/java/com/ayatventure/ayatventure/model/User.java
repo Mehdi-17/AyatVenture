@@ -17,16 +17,16 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "user_name")
+    @Column(name = "user_name", nullable = false)
     private String username;
 
-    @Column(name = "user_password")
+    @Column(name = "user_password", nullable = false)
     private String password;
 
-    @Column(name = "user_email")
+    @Column(name = "user_email", nullable = false)
     private String email;
 
-    @Column(name = "games_played")
+    @Column(name = "games_played", nullable = false)
     private Long gamesPlayed;
 
     @Column(name = "personal_record")

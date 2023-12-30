@@ -20,10 +20,10 @@ public class Game {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(name = "begin_date")
+    @Column(name = "begin_date", nullable = false)
     private Date beginDate;
 
     @Column(name = "score")
