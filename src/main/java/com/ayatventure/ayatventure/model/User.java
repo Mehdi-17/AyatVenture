@@ -27,9 +27,9 @@ public class User {
     private String email;
 
     @Column(name = "games_played", nullable = false)
-    private Long gamesPlayed;
+    private int gamesPlayed;
 
     @Column(name = "personal_record")
-    private Long personalRecord;
+    private int personalRecord;
 
 }

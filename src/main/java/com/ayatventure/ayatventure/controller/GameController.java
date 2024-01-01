@@ -11,7 +11,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("game")
+@RequestMapping("games")
 public class GameController {
 
     private GameService gameService;
