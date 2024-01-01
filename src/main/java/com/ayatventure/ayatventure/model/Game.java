@@ -3,7 +3,7 @@ package com.ayatventure.ayatventure.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "games")
@@ -24,14 +24,14 @@ public class Game {
     private User user;
 
     @Column(name = "begin_date", nullable = false)
-    private Date beginDate;
+    private LocalDate beginDate;
 
     @Column(name = "score")
-    private Long score;
+    private int score;
 
     @Column(name = "total_question")
-    private Long totalQuestion;
+    private int totalQuestion;
 
     @Column(name = "current_question_count")
-    private Long currentQuestionCount;
+    private int currentQuestionCount;
 }
