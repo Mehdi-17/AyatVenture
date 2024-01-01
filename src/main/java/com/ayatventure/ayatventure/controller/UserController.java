@@ -2,6 +2,7 @@ package com.ayatventure.ayatventure.controller;
 
 import com.ayatventure.ayatventure.DTO.UserDTO;
 import com.ayatventure.ayatventure.service.UserService;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
+    @Transactional
     public ResponseEntity<String> createUser(@RequestBody UserDTO userDTO) {
         String usernameCreated = userService.createUser(userDTO);
 

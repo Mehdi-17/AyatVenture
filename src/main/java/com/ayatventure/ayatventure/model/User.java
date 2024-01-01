@@ -46,7 +46,7 @@ public class User {
     @Column(name = "personal_record")
     private int personalRecord;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     private List<Game> games;
 
 }

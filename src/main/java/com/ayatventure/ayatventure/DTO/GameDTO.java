@@ -1,4 +1,9 @@
 package com.ayatventure.ayatventure.DTO;
 
-public record GameDTO(String username, int score, int totalQuestion, int currentQuestionCount) {
+import com.ayatventure.ayatventure.model.Joker;
+
+import java.time.LocalDate;
+import java.util.List;
+
+public record GameDTO(String username, LocalDate beginDate, int score, int totalQuestion, int currentQuestionCount, List<Joker> jokers) {
 }
