@@ -18,10 +18,11 @@ import java.util.Optional;
 public class GameService {
 
     private GameRepository gameRepository;
+    private UserService userService;
 
-    public Game createGame(GameDTO gameDTO){
+    public Game createGame(GameDTO gameDTO) {
         Game gameToCreate = Game.builder()
-                .user(gameDTO.user())
+                .user(userService.getByUsername(gameDTO.username()))
                 .beginDate(LocalDate.now())
                 .score(0)
                 .totalQuestion(gameDTO.totalQuestion())
@@ -31,9 +32,9 @@ public class GameService {
         return gameRepository.save(gameToCreate);
     }
 
-    public Game getGame(Long gameId){
+    public Game getGame(Long gameId) {
         Optional<Game> gameOpt = gameRepository.findById(gameId);
 
-        return gameOpt.orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND, "Game not found."));
+        return gameOpt.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Game not found."));
     }
 }

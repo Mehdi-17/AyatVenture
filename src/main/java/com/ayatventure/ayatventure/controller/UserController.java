@@ -17,9 +17,9 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<Void> createUser(UserDTO userDTO) {
-        userService.createUser(userDTO);
+    public ResponseEntity<String> createUser(UserDTO userDTO) {
+        String usernameCreated = userService.createUser(userDTO);
 
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return ResponseEntity.status(HttpStatus.CREATED).body(usernameCreated);
     }
 }

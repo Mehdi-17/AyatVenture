@@ -4,9 +4,9 @@ import com.ayatventure.ayatventure.DTO.GameDTO;
 import com.ayatventure.ayatventure.model.Game;
 import com.ayatventure.ayatventure.service.GameService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
 @RestController
@@ -20,12 +20,7 @@ public class GameController {
     public ResponseEntity<Game> createGame(GameDTO gameDTO) {
         Game createdGame = gameService.createGame(gameDTO);
 
-        String gameLocation = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(createdGame.getId())
-                .toUriString();
-
-        return ResponseEntity.created(java.net.URI.create(gameLocation)).body(createdGame);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdGame);
     }
 
     @GetMapping("/{id}")
