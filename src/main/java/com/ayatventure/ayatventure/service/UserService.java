@@ -4,13 +4,11 @@ import com.ayatventure.ayatventure.DTO.UserDTO;
 import com.ayatventure.ayatventure.model.User;
 import com.ayatventure.ayatventure.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 @Service
-@NoArgsConstructor
 @AllArgsConstructor
 public class UserService {
 
