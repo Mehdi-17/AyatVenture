@@ -6,22 +6,31 @@ import com.ayatventure.ayatventure.externalApi.DTO.ApiRandomVerseResponseDTO;
 import com.ayatventure.ayatventure.externalApi.DTO.AyatDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
 @Service
 public class QuranService {
 
+    @Value("${quran.api.url}")
+    private String quranApiUrl;
+
     public AyatDTO getRandomAyat() {
         RestTemplate restTemplate = new RestTemplate();
         ObjectMapper mapper = new ObjectMapper();
 
-        //todo améliorer la construction des URL
-        String GET_RANDOM_AYAT = "https://api.quran.com/api/v4/verses/random?fields=text_uthmani&translations=31,779,136";
-        ResponseEntity<String> randomAyatResponse = restTemplate.getForEntity(GET_RANDOM_AYAT, String.class);
+        String getRandomVerseUrl = UriComponentsBuilder.fromUriString(quranApiUrl + "/verses/random")
+                .queryParam("fields", "text_uthmani")
+                .queryParam("translations", "31,779,136")
+                .build()
+                .toUriString();
+
+        ResponseEntity<String> randomAyatResponse = restTemplate.getForEntity(getRandomVerseUrl, String.class);
 
         try {
             ApiRandomVerseResponseDTO apiRandomVerseResponseDTO = mapper.readValue(randomAyatResponse.getBody(), ApiRandomVerseResponseDTO.class);
@@ -36,8 +45,12 @@ public class QuranService {
         RestTemplate restTemplate = new RestTemplate();
         ObjectMapper mapper = new ObjectMapper();
 
-        String GET_ALL_SURAH = "https://api.quran.com/api/v4/chapters?language=fr";
-        ResponseEntity<String> allSurahsResponse = restTemplate.getForEntity(GET_ALL_SURAH, String.class);
+        String getAllSurahUrl = UriComponentsBuilder.fromUriString(quranApiUrl + "/chapters")
+                .queryParam("language", "fr")
+                .build()
+                .toUriString();
+
+        ResponseEntity<String> allSurahsResponse = restTemplate.getForEntity(getAllSurahUrl, String.class);
 
         try {
             ApiAllSurahsResponseDTO apiAllSurahsResponseDTO = mapper.readValue(allSurahsResponse.getBody(), ApiAllSurahsResponseDTO.class);
