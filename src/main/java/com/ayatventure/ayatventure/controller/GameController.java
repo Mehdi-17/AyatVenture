@@ -1,8 +1,6 @@
 package com.ayatventure.ayatventure.controller;
 
 import com.ayatventure.ayatventure.DTO.GameDTO;
-import com.ayatventure.ayatventure.mapper.GameMapper;
-import com.ayatventure.ayatventure.model.Game;
 import com.ayatventure.ayatventure.service.GameService;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
@@ -26,13 +24,11 @@ public class GameController {
     @PostMapping
     @Transactional
     public ResponseEntity<GameDTO> createGame(@RequestBody GameDTO gameDTO) {
-        Game createdGame = gameService.createGame(gameDTO);
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(GameMapper.INSTANCE.gametoGameDto(createdGame));
+        return ResponseEntity.status(HttpStatus.CREATED).body(gameService.createGame(gameDTO));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Game> getGame(@PathVariable("id") Long gameId) {
+    public ResponseEntity<GameDTO> getGame(@PathVariable("id") Long gameId) {
         return ResponseEntity.ok().body(gameService.getGame(gameId));
     }
 

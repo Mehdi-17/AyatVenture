@@ -1,6 +1,7 @@
 package com.ayatventure.ayatventure.service;
 
 import com.ayatventure.ayatventure.DTO.GameDTO;
+import com.ayatventure.ayatventure.mapper.GameMapper;
 import com.ayatventure.ayatventure.model.Game;
 import com.ayatventure.ayatventure.repository.GameRepository;
 import lombok.AllArgsConstructor;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -18,7 +18,7 @@ public class GameService {
     private GameRepository gameRepository;
     private UserService userService;
 
-    public Game createGame(GameDTO gameDTO) {
+    public GameDTO createGame(GameDTO gameDTO) {
         Game gameToCreate = Game.builder()
                 .user(userService.getByUsername(gameDTO.username()))
                 .beginDate(LocalDate.now())
@@ -29,12 +29,12 @@ public class GameService {
 
         //todo: dont forget to create associated Jokers
 
-        return gameRepository.save(gameToCreate);
+        return GameMapper.INSTANCE.gametoGameDto(gameRepository.save(gameToCreate));
     }
 
-    public Game getGame(Long gameId) {
-        Optional<Game> gameOpt = gameRepository.findById(gameId);
+    public GameDTO getGame(Long gameId) {
+        Game game = gameRepository.findById(gameId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Game not found."));
 
-        return gameOpt.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Game not found."));
+        return GameMapper.INSTANCE.gametoGameDto(game);
     }
 }
