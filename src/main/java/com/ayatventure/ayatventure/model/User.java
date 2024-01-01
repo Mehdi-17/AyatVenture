@@ -3,6 +3,8 @@ package com.ayatventure.ayatventure.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 @Builder
@@ -17,13 +19,13 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "user_name", nullable = false)
+    @Column(name = "user_name", nullable = false, unique = true)
     private String username;
 
     @Column(name = "user_password", nullable = false)
     private String password;
 
-    @Column(name = "user_email", nullable = false)
+    @Column(name = "user_email", nullable = false, unique = true)
     private String email;
 
     @Column(name = "games_played", nullable = false)
@@ -31,5 +33,8 @@ public class User {
 
     @Column(name = "personal_record")
     private int personalRecord;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Game> games;
 
 }

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "games")
@@ -34,4 +35,7 @@ public class Game {
 
     @Column(name = "current_question_count")
     private int currentQuestionCount;
+
+    @OneToMany(mappedBy = "game", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Joker> jokers;
 }
