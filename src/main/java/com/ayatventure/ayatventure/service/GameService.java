@@ -37,4 +37,14 @@ public class GameService {
 
         return GameMapper.INSTANCE.gametoGameDto(game);
     }
+
+    public GameDTO updateGame(GameDTO gameUpdated){
+        Game game = gameRepository.findById(gameUpdated.id()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Game not found."));
+
+        game.setScore(gameUpdated.score());
+        game.setJokers(gameUpdated.jokers());
+        game.setCurrentQuestionCount(game.getCurrentQuestionCount() + 1);
+
+        return GameMapper.INSTANCE.gametoGameDto(gameRepository.save(game));
+    }
 }
