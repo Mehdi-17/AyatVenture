@@ -24,7 +24,7 @@ public class GameService {
     public GameDTO createGame(GameDTO gameDTO) {
         Game gameToCreate = Game.builder()
                 .user(userService.getByUsername(gameDTO.username()))
-                //todo: check if i used the date send by the front
+                //todo: check if I used the date send by the front
                 .beginDate(LocalDate.now())
                 .score(0)
                 .totalQuestion(gameDTO.totalQuestion())
