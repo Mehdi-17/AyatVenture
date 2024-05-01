@@ -9,6 +9,10 @@ import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AyatDTO {
+
+    @JsonProperty("chapter_id")
+    private int surahNumber;
+
     @JsonProperty("verse_key")
     private String key;
 

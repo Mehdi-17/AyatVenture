@@ -25,7 +25,7 @@ public class QuranService {
         ObjectMapper mapper = new ObjectMapper();
 
         String getRandomVerseUrl = UriComponentsBuilder.fromUriString(quranApiUrl + "/verses/random")
-                .queryParam("fields", "text_uthmani")
+                .queryParam("fields", "text_uthmani,chapter_id")
                 .queryParam("translations", "31,779,136")
                 .build()
                 .toUriString();
