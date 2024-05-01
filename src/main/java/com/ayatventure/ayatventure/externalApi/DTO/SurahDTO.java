@@ -8,6 +8,8 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SurahDTO {
 
+    private int id;
+
     @JsonProperty("revelation_place")
     private String revelationPlace;
 
