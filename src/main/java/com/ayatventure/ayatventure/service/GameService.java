@@ -25,7 +25,7 @@ public class GameService {
                 .beginDate(LocalDate.now())
                 .score(0)
                 .totalQuestion(gameDTO.totalQuestion())
-                .currentQuestionCount(0)
+                .currentQuestionCount(1)
                 .build();
 
         //todo: dont forget to create associated Jokers
