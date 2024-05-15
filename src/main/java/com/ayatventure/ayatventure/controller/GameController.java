@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 
 @RestController
@@ -33,9 +34,16 @@ public class GameController {
         return ResponseEntity.ok().body(gameService.getGame(gameId));
     }
 
-    @PutMapping
-    public ResponseEntity<GameDTO> updateGame(@RequestBody GameDTO gameUpdated){
-        return ResponseEntity.status(HttpStatus.OK).body(gameService.updateGame(gameUpdated));
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateGame(@PathVariable("id") Long gameId, @RequestBody GameDTO gameToUpdate) {
+        try {
+            GameDTO gameUpdated = gameService.updateGame(gameId, gameToUpdate);
+
+            return ResponseEntity.status(HttpStatus.OK).body(gameUpdated);
+
+        } catch (ResponseStatusException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 
 }
