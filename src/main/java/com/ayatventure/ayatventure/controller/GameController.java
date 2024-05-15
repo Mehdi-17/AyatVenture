@@ -25,13 +25,26 @@ public class GameController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<GameDTO> createGame(@RequestBody GameDTO gameDTO) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(gameService.createGame(gameDTO));
+    public ResponseEntity<?> createGame(@RequestBody GameDTO gameDTO) {
+        try {
+            GameDTO gameCreatedDTO = gameService.createGame(gameDTO);
+
+            return ResponseEntity.status(HttpStatus.CREATED).body(gameCreatedDTO);
+        } catch (ResponseStatusException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<GameDTO> getGame(@PathVariable("id") Long gameId) {
-        return ResponseEntity.ok().body(gameService.getGame(gameId));
+    public ResponseEntity<?> getGame(@PathVariable("id") Long gameId) {
+        try {
+            GameDTO gameDTO = gameService.getGame(gameId);
+
+            return ResponseEntity.status(HttpStatus.OK).body(gameDTO);
+
+        } catch (ResponseStatusException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 
     @PutMapping("/{id}")
