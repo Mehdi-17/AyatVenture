@@ -10,8 +10,19 @@ import org.springframework.web.filter.CorsFilter;
 public class CorsConfig {
 
     @Bean
-    public CorsFilter corsFilter(){
+    public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
+
+        /*
+        TODO: review cors filter before deploy to production
+         corsConfiguration.addAllowedOrigin("https://trusted-domain.com");
+         corsConfiguration.setAllowCredentials(true);
+         corsConfiguration.addAllowedHeader("Content-Type");
+        TODO: check which method my front send to configure here
+         corsConfiguration.addAllowedMethod("GET");
+         corsConfiguration.addAllowedMethod("POST");
+        */
+
         corsConfiguration.addAllowedOrigin("*");
         corsConfiguration.addAllowedMethod("*");
         corsConfiguration.addAllowedHeader("*");
