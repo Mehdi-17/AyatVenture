@@ -1,6 +1,7 @@
 package com.ayatventure.ayatventure.mapper;
 
 import com.ayatventure.ayatventure.DTO.JokerDTO;
+import com.ayatventure.ayatventure.game.mapper.GameMapper;
 import com.ayatventure.ayatventure.model.Joker;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

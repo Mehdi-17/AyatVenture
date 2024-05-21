@@ -1,5 +1,6 @@
 package com.ayatventure.ayatventure.model;
 
+import com.ayatventure.ayatventure.game.model.Game;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

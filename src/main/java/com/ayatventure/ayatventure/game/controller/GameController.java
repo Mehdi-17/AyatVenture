@@ -1,7 +1,7 @@
-package com.ayatventure.ayatventure.controller;
+package com.ayatventure.ayatventure.game.controller;
 
-import com.ayatventure.ayatventure.DTO.GameDTO;
-import com.ayatventure.ayatventure.service.GameService;
+import com.ayatventure.ayatventure.game.DTO.GameDTO;
+import com.ayatventure.ayatventure.game.service.GameService;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

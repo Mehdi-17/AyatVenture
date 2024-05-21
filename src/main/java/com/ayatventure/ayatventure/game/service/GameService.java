@@ -1,9 +1,10 @@
-package com.ayatventure.ayatventure.service;
+package com.ayatventure.ayatventure.game.service;
 
-import com.ayatventure.ayatventure.DTO.GameDTO;
-import com.ayatventure.ayatventure.mapper.GameMapper;
-import com.ayatventure.ayatventure.model.Game;
-import com.ayatventure.ayatventure.repository.GameRepository;
+import com.ayatventure.ayatventure.game.DTO.GameDTO;
+import com.ayatventure.ayatventure.game.mapper.GameMapper;
+import com.ayatventure.ayatventure.game.model.Game;
+import com.ayatventure.ayatventure.game.repository.GameRepository;
+import com.ayatventure.ayatventure.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

@@ -1,5 +1,7 @@
-package com.ayatventure.ayatventure.model;
+package com.ayatventure.ayatventure.game.model;
 
+import com.ayatventure.ayatventure.model.Joker;
+import com.ayatventure.ayatventure.model.User;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
