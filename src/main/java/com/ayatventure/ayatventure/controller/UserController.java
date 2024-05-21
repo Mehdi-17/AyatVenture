@@ -18,6 +18,9 @@ public class UserController {
 
     private UserService userService;
 
+    //todo: implement joker feature with Strategy design pattern
+
+
     @PostMapping("/register")
     @Transactional
     public ResponseEntity<String> registerUser(@RequestBody UserDTO userDTO) {
