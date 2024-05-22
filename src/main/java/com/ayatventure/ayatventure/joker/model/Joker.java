@@ -1,4 +1,4 @@
-package com.ayatventure.ayatventure.model;
+package com.ayatventure.ayatventure.joker.model;
 
 import com.ayatventure.ayatventure.game.model.Game;
 import jakarta.persistence.Column;

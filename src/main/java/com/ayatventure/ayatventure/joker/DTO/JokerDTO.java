@@ -1,4 +1,4 @@
-package com.ayatventure.ayatventure.DTO;
+package com.ayatventure.ayatventure.joker.DTO;
 
 public record JokerDTO(String name, boolean isUsed) {
 }

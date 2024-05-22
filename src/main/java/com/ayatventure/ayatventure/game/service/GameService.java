@@ -4,7 +4,7 @@ import com.ayatventure.ayatventure.game.DTO.GameDTO;
 import com.ayatventure.ayatventure.game.mapper.GameMapper;
 import com.ayatventure.ayatventure.game.model.Game;
 import com.ayatventure.ayatventure.game.repository.GameRepository;
-import com.ayatventure.ayatventure.service.UserService;
+import com.ayatventure.ayatventure.user.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

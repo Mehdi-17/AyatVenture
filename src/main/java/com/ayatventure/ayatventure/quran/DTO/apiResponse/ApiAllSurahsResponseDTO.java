@@ -1,5 +1,6 @@
-package com.ayatventure.ayatventure.externalApi.DTO;
+package com.ayatventure.ayatventure.quran.DTO.apiResponse;
 
+import com.ayatventure.ayatventure.quran.DTO.SurahDTO;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -7,13 +8,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ApiRandomVerseResponseDTO {
+public class ApiAllSurahsResponseDTO {
 
-    @JsonProperty("verse")
-    private AyatDTO ayatDTO;
+    @JsonProperty("chapters")
+    private List<SurahDTO> surahDTOList;
 }

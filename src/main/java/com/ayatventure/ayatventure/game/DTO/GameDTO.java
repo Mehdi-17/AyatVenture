@@ -1,6 +1,6 @@
 package com.ayatventure.ayatventure.game.DTO;
 
-import com.ayatventure.ayatventure.DTO.JokerDTO;
+import com.ayatventure.ayatventure.joker.DTO.JokerDTO;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.ayatventure.ayatventure.controller;
+package com.ayatventure.ayatventure.user.controller;
 
-import com.ayatventure.ayatventure.DTO.UserDTO;
-import com.ayatventure.ayatventure.service.UserService;
+import com.ayatventure.ayatventure.user.DTO.UserDTO;
+import com.ayatventure.ayatventure.user.service.UserService;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     private UserService userService;
-
-    //todo: implement joker feature with Strategy design pattern
 
     @PostMapping("/register")
     @Transactional

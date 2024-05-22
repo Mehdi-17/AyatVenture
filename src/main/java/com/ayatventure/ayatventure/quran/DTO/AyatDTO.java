@@ -1,4 +1,4 @@
-package com.ayatventure.ayatventure.externalApi.DTO;
+package com.ayatventure.ayatventure.quran.DTO;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

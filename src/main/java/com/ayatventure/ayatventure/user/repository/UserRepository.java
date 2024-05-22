@@ -1,6 +1,6 @@
-package com.ayatventure.ayatventure.repository;
+package com.ayatventure.ayatventure.user.repository;
 
-import com.ayatventure.ayatventure.model.User;
+import com.ayatventure.ayatventure.user.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

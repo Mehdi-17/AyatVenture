@@ -1,8 +1,8 @@
-package com.ayatventure.ayatventure.service;
+package com.ayatventure.ayatventure.user.service;
 
-import com.ayatventure.ayatventure.DTO.UserDTO;
-import com.ayatventure.ayatventure.model.User;
-import com.ayatventure.ayatventure.repository.UserRepository;
+import com.ayatventure.ayatventure.user.DTO.UserDTO;
+import com.ayatventure.ayatventure.user.model.User;
+import com.ayatventure.ayatventure.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
